@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Courier New',monospace;background:#050505;color:#3c3cc3;min-height:100vh;}
+body{font-family:'Courier New',monospace;background:#050505;color:#c8c8e8;min-height:100vh;}
 input,button,select,textarea{font-family:inherit;}
 input:focus{outline:none;border-color:rgba(84, 70, 185, 0.55)!important;}
 button:active{opacity:.75;}
@@ -22,23 +22,23 @@ input[type=time]::-webkit-calendar-picker-indicator{filter:invert(.35) sepia(1) 
 .spin{display:inline-block;animation:spin .9s linear infinite;}
 .page{min-height:100vh;display:flex;flex-direction:column;max-width:500px;margin:0 auto;padding-bottom:86px;}
 .hdr{padding:16px 16px 10px;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(0,0,0,.38);}
-.tabs{display:flex;background:rgba(238, 227, 227, 0.42);border-bottom:1px solid rgba(255,255,255,.05);}
-.tab{flex:1;padding:10px 0;background:none;border:none;color:#2a2a44;font-size:9px;letter-spacing:2px;cursor:pointer;border-bottom:2px solid transparent;transition:color .18s;font-family:inherit;}
+.tabs{display:flex;background:rgba(20,18,40,0.85);border-bottom:1px solid rgba(255,255,255,.05);}
+.tab{flex:1;padding:10px 0;background:none;border:none;color:#8888aa;font-size:9px;letter-spacing:2px;cursor:pointer;border-bottom:2px solid transparent;transition:color .18s;font-family:inherit;}
 .tab.on{color:#7c6bff;border-bottom-color:#7c6bff;}
 .adm .tab.on{color:#6bffb8;border-bottom-color:#07db74;}
 .body{flex:1;padding:14px;overflow-x:hidden;}
 .btn{border:none;cursor:pointer;border-radius:9px;font-size:10px;font-weight:700;letter-spacing:2px;padding:13px 0;width:100%;transition:all .18s;font-family:inherit;}
 .btn:disabled{opacity:.22;cursor:not-allowed;}
-.inp{padding:10px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:9px;color:#fff;font-size:13px;width:100%;font-family:inherit;}
+.inp{padding:10px 12px;background:rgba(255,255,255,.07);border:1px solid rgba(160,160,200,.3);border-radius:9px;color:#fff;font-size:13px;width:100%;font-family:inherit;}
 .sbar{display:flex;align-items:center;gap:7px;font-size:8px;letter-spacing:2px;padding:5px 14px;background:rgba(0,0,0,.32);border-bottom:1px solid rgba(255,255,255,.04);}
 .stbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:500px;background:rgba(3,2,14,.97);border-top:1px solid rgba(255,255,255,.04);padding:7px 0;display:flex;justify-content:center;z-index:100;}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px;}
-.modal{background:linear-gradient(160deg,#0e0c2e,#0a1520);border:1px solid rgba(124,107,255,.2);border-radius:14px;padding:20px;width:100%;max-width:360px;max-height:92vh;overflow-y:auto;animation:fadeUp .2s ease;}
-.adm .modal{background:linear-gradient(160deg,#060e06,#040e14);border-color:rgba(107,255,184,.18);}
+.modal{background:linear-gradient(160deg,#0e0c2e,#0a1520);border:1px solid rgba(124,107,255,.45);border-radius:14px;padding:20px;width:100%;max-width:360px;max-height:92vh;overflow-y:auto;animation:fadeUp .2s ease;}
+.adm .modal{background:linear-gradient(160deg,#060e06,#040e14);border-color:rgba(107,255,184,.4);}
 .ff{margin-bottom:10px;}
-.lbl{font-size:7px;letter-spacing:3px;color:#efecf5;margin-bottom:3px;}
-.adm .lbl{color:#1a3a1a;}
-.row{display:flex;justify-content:space-between;margin-bottom:4px;font-size:10px;}
+.lbl{font-size:7.5px;letter-spacing:2.5px;color:#a0a0c0;margin-bottom:4px;}
+.adm .lbl{color:#5aaa7a;}
+.row{display:flex;justify-content:space-between;margin-bottom:4px;font-size:10px;color:#9090b0;}
 .pluto{text-align:center;padding:10px 0 16px;font-family:'Roboto Mono',monospace;font-size:11px;font-weight:700;letter-spacing:4px;color:#6bffb8;text-shadow:0 0 14px rgba(107,255,184,.5);}
 </style>
 </head>
@@ -249,20 +249,20 @@ function rChooser(){
 <div style="width:100%;max-width:370px;">
 
   <div style="text-align:center;margin-bottom:30px;">
-    <div style="font-size:9px;letter-spacing:5px;color:#1a0a2e;margin-bottom:6px;">TIMESHEET SYSTEM</div>
+    <div style="font-size:9px;letter-spacing:5px;color:#7060a0;margin-bottom:6px;">TIMESHEET SYSTEM</div>
     <div style="font-size:32px;font-weight:700;letter-spacing:3px;color:#fff;">WORK<span style="color:#7c6bff;">LOG</span></div>
   </div>
 
   <!-- Drive panel -->
   <div style="background:rgba(107,255,184,.04);border:1px solid rgba(107,255,184,.14);border-radius:12px;padding:15px;margin-bottom:16px;">
-    <div style="font-size:9px;letter-spacing:3px;color:#1a4a2a;margin-bottom:9px;">☁ GOOGLE DRIVE DATA FILE</div>
+    <div style="font-size:9px;letter-spacing:3px;color:#5aaa7a;margin-bottom:9px;">☁ GOOGLE DRIVE DATA FILE</div>
 
     <!-- File connected indicator -->
     <div style="display:flex;align-items:center;gap:8px;background:rgba(107,255,184,.06);border:1px solid rgba(107,255,184,.15);border-radius:8px;padding:9px 11px;margin-bottom:10px;">
       <span style="font-size:14px;">📊</span>
       <div style="flex:1;min-width:0;">
         <div style="font-size:9px;color:#6bffb8;font-weight:700;letter-spacing:1px;">worklog-data.xlsx</div>
-        <div style="font-size:7px;color:#1a4a2a;margin-top:1px;letter-spacing:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">ID: 1MWWjDMFAaflnBYs6q2LGlZE3NcgROsh1</div>
+        <div style="font-size:7px;color:#4a8a5a;margin-top:1px;letter-spacing:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">ID: 1MWWjDMFAaflnBYs6q2LGlZE3NcgROsh1</div>
       </div>
       <span style="font-size:9px;color:#6bffb8;">✓</span>
     </div>
@@ -271,10 +271,10 @@ function rChooser(){
       ? `<div style="font-size:8px;color:#6bffb8;margin-bottom:8px;">✓ Signed in as ${gUser?.email||"Google"}</div>
          <div style="display:flex;gap:8px;">
            <button data-action="do-sync" style="flex:1;padding:9px 0;background:rgba(107,255,184,.1);border:1px solid rgba(107,255,184,.25);color:#6bffb8;border-radius:8px;font-size:9px;letter-spacing:2px;cursor:pointer;font-family:inherit;">↺ SYNC NOW</button>
-           <button data-action="gsignout" style="padding:9px 14px;background:none;border:1px solid rgba(255,255,255,.08);color:#333;border-radius:8px;font-size:9px;cursor:pointer;font-family:inherit;">SIGN OUT</button>
+           <button data-action="gsignout" style="padding:9px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.2);color:#888;border-radius:8px;font-size:9px;cursor:pointer;font-family:inherit;">SIGN OUT</button>
          </div>`
       : `<button data-action="gsignin" style="width:100%;padding:10px 0;background:rgba(66,133,244,.1);border:1px solid rgba(66,133,244,.25);color:#4285f4;border-radius:8px;font-size:10px;font-weight:700;letter-spacing:2px;cursor:pointer;font-family:inherit;">G &nbsp; SIGN IN WITH GOOGLE TO SYNC</button>
-         <div style="font-size:8px;color:#1a3a1a;margin-top:7px;text-align:center;">Sign in once to read &amp; write to the shared Drive file</div>`}
+         <div style="font-size:8px;color:#5a8a6a;margin-top:7px;text-align:center;">Sign in once to read &amp; write to the shared Drive file</div>`}
   </div>
 
   <div style="display:flex;flex-direction:column;gap:10px;">
@@ -297,19 +297,19 @@ function rULogin(){
 <div style="width:100%;max-width:340px;">
   <button data-action="back" style="background:rgba(124,107,255,.12);border:1px solid rgba(124,107,255,.45);color:#9988ff;font-size:9px;letter-spacing:3px;cursor:pointer;margin-bottom:18px;font-family:inherit;border-radius:7px;padding:6px 14px;">← BACK</button>
   <div style="text-align:center;margin-bottom:28px;">
-    <div style="font-size:9px;letter-spacing:5px;color:#1a0a2e;margin-bottom:5px;">TIMESHEET</div>
+    <div style="font-size:9px;letter-spacing:5px;color:#7060a0;margin-bottom:5px;">TIMESHEET</div>
     <div style="font-size:30px;font-weight:700;letter-spacing:3px;color:#fff;">WORK<span style="color:#7c6bff;">LOG</span></div>
-    <div style="font-size:8px;color:#2a1a44;margin-top:5px;letter-spacing:2px;">EMPLOYEE PORTAL</div>
+    <div style="font-size:8px;color:#7060a0;margin-top:5px;letter-spacing:2px;">EMPLOYEE PORTAL</div>
   </div>
   <div class="sbar" id="sbar-ul"></div>
-  <div style="background:rgba(255,255,255,.02);border:1px solid rgba(124,107,255,.13);border-radius:13px;padding:20px;margin-top:6px;">
+  <div style="background:rgba(255,255,255,.02);border:1px solid rgba(124,107,255,.4);border-radius:13px;padding:20px;margin-top:6px;">
     <div class="ff"><div class="lbl">USERNAME</div>
       <input class="inp" id="inp-un" type="text" value="${f.un||""}" placeholder="username" autocapitalize="none" autocorrect="off"/>
     </div>
     <div class="ff"><div class="lbl">PASSWORD</div>
       <div style="position:relative;">
         <input class="inp" id="inp-pw" type="${f.spw?"text":"password"}" value="${f.pw||""}" placeholder="password" style="padding-right:42px;"/>
-        <button data-action="spw" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#555;cursor:pointer;font-size:14px;">${f.spw?"🙈":"👁"}</button>
+        <button data-action="spw" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#9090b0;cursor:pointer;font-size:14px;">${f.spw?"🙈":"👁"}</button>
       </div>
     </div>
     ${f.err?`<div style="color:#ff6b6b;font-size:10px;margin-bottom:9px;">⚠ ${f.err}</div>`:""}
@@ -349,7 +349,7 @@ function rUApp(){
   return`
 <div class="page" style="background:linear-gradient(160deg,#070512,#130f35,#091522);">
   <div class="hdr">
-    <div style="font-size:8px;letter-spacing:4px;color:#1a0a2e;margin-bottom:1px;">TIMESHEET</div>
+    <div style="font-size:8px;letter-spacing:4px;color:#6050a0;margin-bottom:1px;">TIMESHEET</div>
     <div style="display:flex;justify-content:space-between;align-items:center;">
       <div style="font-size:22px;font-weight:700;letter-spacing:2px;color:#fff;">WORK<span style="color:#7c6bff;">LOG</span></div>
       <div style="display:flex;gap:7px;">
@@ -357,8 +357,8 @@ function rUApp(){
         <button data-action="ulogout" style="background:rgba(255,100,100,.08);border:1px solid rgba(255,100,100,.3);color:#ff6b6b;border-radius:7px;padding:5px 10px;font-size:9px;cursor:pointer;">EXIT</button>
       </div>
     </div>
-    <div style="font-size:9px;color:#3a2a5a;margin-top:2px;">👤 <span style="color:#7c6bff;">${session.name||session.username}</span></div>
-    <div style="font-size:7px;color:#1a0a2e;margin-top:1px;">${pl}</div>
+    <div style="font-size:9px;color:#9080c0;margin-top:2px;">👤 <span style="color:#7c6bff;">${session.name||session.username}</span></div>
+    <div style="font-size:7px;color:#6858a8;margin-top:1px;">${pl}</div>
   </div>
   <div class="sbar" id="sbar-ua"></div>
   <div class="tabs">
@@ -368,19 +368,19 @@ function rUApp(){
 
   ${utab==="clock"?`
     <div style="text-align:center;padding:18px 0 14px;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:14px;">
-      <div id="lclk" style="font-size:38px;font-weight:700;letter-spacing:2px;color:${cs.working?"#7c6bff":"#181828"};">${new Date().toLocaleTimeString()}</div>
-      <div style="font-size:8px;letter-spacing:4px;color:#282838;margin-top:2px;">${cs.working?(cs.onBreak?"⏸ ON BREAK":"▶ WORKING"):"○ NOT CLOCKED IN"}</div>
+      <div id="lclk" style="font-size:38px;font-weight:700;letter-spacing:2px;color:${cs.working?"#7c6bff":"#4a4a7a"};">${new Date().toLocaleTimeString()}</div>
+      <div style="font-size:8px;letter-spacing:4px;color:#8880b0;margin-top:2px;">${cs.working?(cs.onBreak?"⏸ ON BREAK":"▶ WORKING"):"○ NOT CLOCKED IN"}</div>
     </div>
     ${cs.working?`<div style="display:flex;gap:8px;margin-bottom:13px;">${mst("ELAPSED",fmtDur(lW),"#7c6bff")}${mst("BREAK",fmtDur(lB+aB),"#ffbe6b")}${mst("NET",fmtDur(lN),"#6bffb8")}</div>`:""}
-    ${todMs>0?`<div style="background:rgba(124,107,255,.06);border:1px solid rgba(124,107,255,.12);border-radius:7px;padding:7px 10px;margin-bottom:11px;font-size:10px;"><span style="color:#2a2a44;letter-spacing:2px;">TODAY: </span><span style="color:#6bffb8;font-weight:700;">${fmtDur(todMs)}</span></div>`:""}
+    ${todMs>0?`<div style="background:rgba(124,107,255,.1);border:1px solid rgba(124,107,255,.3);border-radius:7px;padding:7px 10px;margin-bottom:11px;font-size:10px;"><span style="color:#9090c0;letter-spacing:2px;">TODAY: </span><span style="color:#6bffb8;font-weight:700;">${fmtDur(todMs)}</span></div>`:""}
     <div style="display:flex;gap:8px;margin-bottom:8px;">
       <button data-action="${cs.working?"clkout":"clkin"}" class="btn" style="background:rgba(${cs.working?"255,107,107":"107,255,184"},.1);border:1px solid rgba(${cs.working?"255,107,107":"107,255,184"},.24);color:${cs.working?"#ff6b6b":"#6bffb8"};">${cs.working?"CLOCK OUT":"CLOCK IN"}</button>
     </div>
     <div style="display:flex;gap:8px;margin-bottom:16px;">
-      <button data-action="brkin" class="btn" style="padding:10px 0;font-size:9px;background:rgba(255,190,107,.08);border:1px solid rgba(255,190,107,.18);color:${(!cs.working||cs.onBreak)?"#181828":"#ffbe6b"};" ${(!cs.working||cs.onBreak)?"disabled":""}>BREAK IN</button>
-      <button data-action="brkout" class="btn" style="padding:10px 0;font-size:9px;background:rgba(124,107,255,.08);border:1px solid rgba(124,107,255,.18);color:${!cs.onBreak?"#181828":"#7c6bff"};" ${!cs.onBreak?"disabled":""}>BREAK OUT</button>
+      <button data-action="brkin" class="btn" style="padding:10px 0;font-size:9px;background:rgba(255,190,107,.08);border:1px solid rgba(255,190,107,.18);color:${(!cs.working||cs.onBreak)?"#44445a":"#ffbe6b"};" ${(!cs.working||cs.onBreak)?"disabled":""}>BREAK IN</button>
+      <button data-action="brkout" class="btn" style="padding:10px 0;font-size:9px;background:rgba(124,107,255,.08);border:1px solid rgba(124,107,255,.18);color:${!cs.onBreak?"#44445a":"#7c6bff"};" ${!cs.onBreak?"disabled":""}>BREAK OUT</button>
     </div>
-    ${cs.working?`<div style="background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.04);border-radius:9px;padding:11px;font-size:9px;">
+    ${cs.working?`<div style="background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.12);border-radius:9px;padding:11px;font-size:9px;">
       ${kv("Clocked In",fmtTF(cs.ci))}
       ${(cs.brks||[]).map((b,i)=>kv("Break "+(i+1),fmtT(b.s)+" → "+fmtT(b.e),"#333")).join("")}
       ${cs.onBreak?kv("Break started",fmtTF(cs.bi),"#ffbe6b"):""}
@@ -389,66 +389,66 @@ function rUApp(){
 
   ${utab==="entries"?`
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-      <div><div style="font-size:8px;letter-spacing:3px;color:#282838;">SHIFT LOG</div><div style="font-size:11px;color:#6bffb8;font-weight:700;margin-top:1px;">${fmtDur(pMs)} THIS PERIOD</div></div>
+      <div><div style="font-size:8px;letter-spacing:3px;color:#8880b0;">SHIFT LOG</div><div style="font-size:11px;color:#6bffb8;font-weight:700;margin-top:1px;">${fmtDur(pMs)} THIS PERIOD</div></div>
       ${aOpen&&!showAForm?`<button data-action="open-aform" style="background:rgba(124,107,255,.12);border:1px solid rgba(124,107,255,.38);color:#9988ff;border-radius:7px;padding:5px 9px;font-size:8px;letter-spacing:2px;cursor:pointer;">+ PAST ENTRY</button>`:""}
     </div>
     ${showAForm&&aOpen?rMForm(uid,false):""}
-    ${sorted.length===0?`<div style="text-align:center;color:#181828;font-size:11px;padding:30px 0;">No shifts yet.</div>`
+    ${sorted.length===0?`<div style="text-align:center;color:#6060a0;font-size:11px;padding:30px 0;">No shifts yet.</div>`
       :sorted.map(e=>rECard(e,aOpen)).join("")}
   `:""}
 
   ${utab==="pay"?`
     ${aShowPanel&&aOpen?`
-    <div style="background:rgba(124,107,255,.06);border:1px solid rgba(124,107,255,.16);border-radius:10px;padding:12px;margin-bottom:12px;">
+    <div style="background:rgba(124,107,255,.08);border:1px solid rgba(124,107,255,.35);border-radius:10px;padding:12px;margin-bottom:12px;">
       <div style="display:flex;justify-content:space-between;margin-bottom:9px;">
         <div style="font-size:8px;letter-spacing:3px;color:#7c6bff;">🔓 ADMIN SETTINGS</div>
-        <button data-action="close-ap" style="background:none;border:none;color:#444;cursor:pointer;font-size:13px;">✕</button>
+        <button data-action="close-ap" style="background:none;border:none;color:#9090b0;cursor:pointer;font-size:13px;">✕</button>
       </div>
       <div style="background:rgba(0,0,0,.2);border-radius:7px;padding:9px 11px;margin-bottom:9px;">
-        <div style="font-size:7px;letter-spacing:2px;color:#2a2a44;margin-bottom:2px;">YOUR HOURLY RATE (set by admin)</div>
+        <div style="font-size:7px;letter-spacing:2px;color:#9090c0;margin-bottom:2px;">YOUR HOURLY RATE (set by admin)</div>
         <div style="font-size:20px;color:#9988ff;font-weight:700;">${rate?curr+rate.toFixed(2)+"/hr":"Not set"}</div>
       </div>
       <button data-action="open-chg-apw" style="width:100%;padding:9px 0;background:rgba(255,190,107,.1);border:1px solid rgba(255,190,107,.35);color:#ffbe6b;border-radius:7px;font-size:8px;letter-spacing:2px;cursor:pointer;font-family:inherit;">🔑 CHANGE MY ADMIN PASSWORD</button>
     </div>`:""}
-    <div style="font-size:7px;letter-spacing:3px;color:#1e1e2e;margin-bottom:3px;">CURRENT PERIOD</div>
-    <div style="font-size:7px;color:#2a1a44;margin-bottom:11px;">${pl}</div>
+    <div style="font-size:7px;letter-spacing:3px;color:#8080a8;margin-bottom:3px;">CURRENT PERIOD</div>
+    <div style="font-size:7px;color:#9080c0;margin-bottom:11px;">${pl}</div>
     <div style="background:rgba(107,255,184,.04);border:1px solid rgba(107,255,184,.09);border-radius:10px;padding:12px;margin-bottom:11px;">
-      <div style="font-size:7px;letter-spacing:3px;color:#1a3a24;margin-bottom:2px;">HOURS THIS PERIOD</div>
-      <div style="font-size:30px;font-weight:700;color:#6bffb8;">${pH.toFixed(2)}<span style="font-size:11px;color:#1a2a1a;"> hrs</span></div>
-      <div style="font-size:8px;color:#1a2a1a;">${fmtDur(pMs)} · ${pEnts.length} shift${pEnts.length!==1?"s":""}</div>
+      <div style="font-size:7px;letter-spacing:3px;color:#5aaa7a;margin-bottom:2px;">HOURS THIS PERIOD</div>
+      <div style="font-size:30px;font-weight:700;color:#6bffb8;">${pH.toFixed(2)}<span style="font-size:11px;color:#5aaa7a;"> hrs</span></div>
+      <div style="font-size:8px;color:#5aaa7a;">${fmtDur(pMs)} · ${pEnts.length} shift${pEnts.length!==1?"s":""}</div>
     </div>
     <div style="display:flex;gap:8px;margin-bottom:11px;">
       <div style="flex:1;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.04);border-radius:9px;padding:10px;">
-        <div style="font-size:7px;letter-spacing:2px;color:#1e1e2e;margin-bottom:2px;">RATE / HR</div>
-        <div style="font-size:18px;font-weight:700;color:${rate?"#fff":"#181828"};">${rate?curr+rate.toFixed(2):"—"}</div>
+        <div style="font-size:7px;letter-spacing:2px;color:#8080a8;margin-bottom:2px;">RATE / HR</div>
+        <div style="font-size:18px;font-weight:700;color:${rate?"#fff":"#5555a0"};">${rate?curr+rate.toFixed(2):"—"}</div>
       </div>
       <div style="flex:1;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.04);border-radius:9px;padding:10px;">
-        <div style="font-size:7px;letter-spacing:2px;color:#1e1e2e;margin-bottom:2px;">EXPECTED</div>
+        <div style="font-size:7px;letter-spacing:2px;color:#8080a8;margin-bottom:2px;">EXPECTED</div>
         <div style="font-size:18px;font-weight:700;color:#9988ff;">${curr}${pExp.toFixed(2)}</div>
-        <div style="font-size:7px;color:#1a1a2a;">${pH.toFixed(2)}h × ${curr}${rate.toFixed(2)}</div>
+        <div style="font-size:7px;color:#7070a0;">${pH.toFixed(2)}h × ${curr}${rate.toFixed(2)}</div>
       </div>
     </div>
     ${rBal(pBal,pExp,pRcvd,curr)}
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;margin-top:10px;">
-      <div style="font-size:7px;letter-spacing:3px;color:#1e1e2e;">PAYMENTS RECEIVED</div>
+      <div style="font-size:7px;letter-spacing:3px;color:#8080a8;">PAYMENTS RECEIVED</div>
       ${aOpen&&!showPForm?`<button data-action="open-pform" style="background:rgba(107,255,184,.1);border:1px solid rgba(107,255,184,.35);color:#6bffb8;border-radius:6px;padding:4px 8px;font-size:8px;cursor:pointer;font-family:inherit;">+ RECORD</button>`:""}
     </div>
     ${showPForm&&aOpen?rPForm():""}
-    ${pPays.length===0?`<div style="font-size:10px;color:#141420;padding:7px 0;">No payments recorded.</div>`
+    ${pPays.length===0?`<div style="font-size:10px;color:#6060a0;padding:7px 0;">No payments recorded.</div>`
       :pPays.map(p=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.03);">
-        <div><div style="font-size:12px;color:#6bffb8;font-weight:700;">${curr}${parseFloat(p.amount).toFixed(2)}</div><div style="font-size:8px;color:#1a2a1a;">${fmtD(p.date)}${p.note?` · ${p.note}`:""}</div></div>
+        <div><div style="font-size:12px;color:#6bffb8;font-weight:700;">${curr}${parseFloat(p.amount).toFixed(2)}</div><div style="font-size:8px;color:#7070a0;">${fmtD(p.date)}${p.note?` · ${p.note}`:""}</div></div>
         ${aOpen?`<button data-action="udel-pay-${p.id}" style="background:none;border:1px solid rgba(255,100,100,.3);color:#ff6b6b;border-radius:4px;padding:2px 6px;font-size:7px;cursor:pointer;">DEL</button>`:""}
       </div>`).join("")}
     <div style="margin-top:14px;padding-top:11px;border-top:1px solid rgba(255,255,255,.04);">
       ${rpts.find(r=>r.periodKey===pk)
-        ?`<div style="font-size:8px;color:#1a3311;text-align:center;letter-spacing:2px;">✓ REPORT GENERATED FOR THIS PERIOD</div>`
-        :`<button data-action="gen-report" class="btn" style="background:rgba(124,107,255,.08);border:1px solid rgba(124,107,255,.2);color:#7c6bff;font-size:10px;">📊 GENERATE MONTHLY REPORT</button>`}
+        ?`<div style="font-size:8px;color:#5aaa5a;text-align:center;letter-spacing:2px;">✓ REPORT GENERATED FOR THIS PERIOD</div>`
+        :`<button data-action="gen-report" class="btn" style="background:rgba(124,107,255,.14);border:1px solid rgba(124,107,255,.5);color:#b0a0ff;font-size:10px;">📊 GENERATE MONTHLY REPORT</button>`}
     </div>
   `:""}
 
   ${utab==="reports"?`
-    <div style="font-size:8px;letter-spacing:3px;color:#1e1e2e;margin-bottom:11px;">MONTHLY REPORTS</div>
-    ${rpts.length===0?`<div style="text-align:center;color:#141420;font-size:11px;padding:30px 0;">No reports yet.</div>`
+    <div style="font-size:8px;letter-spacing:3px;color:#8080a8;margin-bottom:11px;">MONTHLY REPORTS</div>
+    ${rpts.length===0?`<div style="text-align:center;color:#6060a0;font-size:11px;padding:30px 0;">No reports yet.</div>`
       :[...rpts].sort((a,b)=>b.periodKey.localeCompare(a.periodKey)).map(r=>rRCard(r,curr)).join("")}
   `:""}
 
@@ -456,7 +456,7 @@ function rUApp(){
   <div class="pluto">CREATED BY PLUTO</div>
   <div class="stbar">${cs.working
     ?`<div style="display:flex;align-items:center;gap:6px;font-size:9px;color:${cs.onBreak?"#ffbe6b":"#6bffb8"};letter-spacing:2px;"><span style="width:5px;height:5px;border-radius:50%;background:${cs.onBreak?"#ffbe6b":"#6bffb8"};box-shadow:0 0 6px ${cs.onBreak?"#ffbe6b":"#6bffb8"};animation:pulse 1.5s infinite;display:inline-block;"></span>${cs.onBreak?"ON BREAK":"CLOCKED IN"} · ${fmtDur(lN)} NET</div>`
-    :`<div style="font-size:8px;color:#0e0e18;letter-spacing:3px;">WORKLOG</div>`}
+    :`<div style="font-size:8px;color:#6060a0;letter-spacing:3px;">WORKLOG</div>`}
   </div>
   ${A.modal?rModal(A.modal):""}
 </div>`;
@@ -472,7 +472,7 @@ function rALogin(){
 <div style="width:100%;max-width:340px;">
   <button data-action="back" style="background:rgba(107,255,184,.1);border:1px solid rgba(107,255,184,.4);color:#6bffb8;font-size:9px;letter-spacing:3px;cursor:pointer;margin-bottom:18px;font-family:inherit;border-radius:7px;padding:6px 14px;">← BACK</button>
   <div style="text-align:center;margin-bottom:28px;">
-    <div style="font-size:8px;letter-spacing:5px;color:#0a1a0a;margin-bottom:5px;">WORKLOG</div>
+    <div style="font-size:8px;letter-spacing:5px;color:#5aaa7a;margin-bottom:5px;">WORKLOG</div>
     <div style="font-size:30px;font-weight:700;letter-spacing:3px;color:#fff;">ADMIN<span style="color:#6bffb8;">HUB</span></div>
   </div>
   <div class="sbar adm" id="sbar-al"></div>
@@ -482,7 +482,7 @@ function rALogin(){
     </div>
     ${f.aerr?`<div style="color:#ff6b6b;font-size:10px;margin-bottom:9px;">⚠ ${f.aerr}</div>`:""}
     <button data-action="alogin" class="btn" style="background:rgba(107,255,184,.14);border:1px solid rgba(107,255,184,.45);color:#6bffb8;">ACCESS ADMIN</button>
-    <div style="font-size:8px;color:#0a1a0a;text-align:center;margin-top:9px;">Default: pluto2024</div>
+    <div style="font-size:8px;color:#5aaa7a;text-align:center;margin-top:9px;">Default: pluto2024</div>
   </div>
   <div class="pluto adm" style="margin-top:22px;">CREATED BY PLUTO</div>
 </div></div>`;
@@ -500,7 +500,7 @@ function rAApp(){
   return`
 <div class="page adm" style="background:linear-gradient(135deg,#03020c,#050e08,#040e16);">
   <div class="hdr" style="border-bottom-color:rgba(107,255,184,.07);">
-    <div style="font-size:8px;letter-spacing:4px;color:#0a1a0a;margin-bottom:2px;">WORKLOG</div>
+    <div style="font-size:8px;letter-spacing:4px;color:#5aaa7a;margin-bottom:2px;">WORKLOG</div>
     <div style="display:flex;justify-content:space-between;align-items:center;">
       <div style="font-size:22px;font-weight:700;letter-spacing:2px;color:#fff;">ADMIN<span style="color:#6bffb8;">HUB</span></div>
       <div style="display:flex;gap:7px;">
@@ -508,20 +508,20 @@ function rAApp(){
         <button data-action="alogout" style="background:rgba(255,100,100,.08);border:1px solid rgba(255,100,100,.3);color:#ff6b6b;border-radius:7px;padding:5px 9px;font-size:9px;cursor:pointer;">LOGOUT</button>
       </div>
     </div>
-    <div style="font-size:8px;color:#0a1a0a;margin-top:2px;">${users.length} employee${users.length!==1?"s":""} · ${ppLabel(pS)}</div>
+    <div style="font-size:8px;color:#5aaa7a;margin-top:2px;">${users.length} employee${users.length!==1?"s":""} · ${ppLabel(pS)}</div>
   </div>
   <div class="sbar adm" id="sbar-aa"></div>
   <div class="tabs adm">
-    ${["users","reports","settings"].map(k=>`<button class="tab${atab===k?" on":""}" data-action="at-${k}" style="color:${atab===k?"#6bffb8":"#1a3a1a"};">${k==="users"?"USERS":k==="reports"?"ALL REPORTS":"SETTINGS"}</button>`).join("")}
+    ${["users","reports","settings"].map(k=>`<button class="tab${atab===k?" on":""}" data-action="at-${k}" style="color:${atab===k?"#6bffb8":"#6aaa7a"};">${k==="users"?"USERS":k==="reports"?"ALL REPORTS":"SETTINGS"}</button>`).join("")}
   </div>
   <div class="body">
 
   ${atab==="users"?`
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:11px;">
-      <div style="font-size:8px;letter-spacing:3px;color:#1a3a1a;">${users.length} EMPLOYEE${users.length!==1?"S":""}</div>
+      <div style="font-size:8px;letter-spacing:3px;color:#5aaa7a;">${users.length} EMPLOYEE${users.length!==1?"S":""}</div>
       <button data-action="open-cu" style="background:rgba(107,255,184,.08);border:1px solid rgba(107,255,184,.2);color:#6bffb8;border-radius:7px;padding:6px 12px;font-size:8px;letter-spacing:2px;cursor:pointer;font-family:inherit;">+ NEW USER</button>
     </div>
-    ${users.length===0?`<div style="text-align:center;color:#0a1a0a;font-size:11px;padding:34px 0;">No employees yet. Create one above.</div>`
+    ${users.length===0?`<div style="text-align:center;color:#5aaa7a;font-size:11px;padding:34px 0;">No employees yet. Create one above.</div>`
       :users.map(u=>{
         const ue=(DB.entries||[]).filter(e=>e.userId===u.id);
         const {s,e}=getPP();
@@ -529,63 +529,63 @@ function rAApp(){
         const r2=parseFloat(u.hourlyRate)||0;
         const paid=((DB.payments||[]).filter(p=>p.userId===u.id&&p.periodKey===pk)).reduce((a,p)=>a+(parseFloat(p.amount)||0),0);
         const owed=msToH(pMs2)*r2-paid;
-        return`<div data-action="vu-${u.id}" style="background:rgba(0,0,0,.22);border:1px solid rgba(107,255,184,.07);border-radius:10px;padding:13px;margin-bottom:8px;cursor:pointer;" onmouseenter="this.style.borderColor='rgba(107,255,184,.2)'" onmouseleave="this.style.borderColor='rgba(107,255,184,.07)'">
+        return`<div data-action="vu-${u.id}" style="background:rgba(0,0,0,.22);border:1px solid rgba(107,255,184,.2);border-radius:10px;padding:13px;margin-bottom:8px;cursor:pointer;" onmouseenter="this.style.borderColor='rgba(107,255,184,.2)'" onmouseleave="this.style.borderColor='rgba(107,255,184,.07)'">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;">
             <div>
               <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;">${u.name}</div>
-              <div style="font-size:8px;color:#6bffb844;margin-bottom:6px;">@${u.username}</div>
+              <div style="font-size:8px;color:#6bffb8;margin-bottom:6px;opacity:0.6;">@${u.username}</div>
               <div style="display:flex;gap:14px;">
                 ${ms2("PERIOD",msToH(pMs2).toFixed(1)+"h","#6bffb8")}
                 ${ms2("OWED",curr+(owed>0?owed.toFixed(2):"0.00"),owed>0?"#ff6b6b":"#6bffb8")}
                 ${ms2("RATE",r2?curr+r2.toFixed(2):"—","#9988ff")}
               </div>
             </div>
-            <div style="font-size:8px;color:#6bffb822;margin-top:2px;">VIEW →</div>
+            <div style="font-size:8px;color:#6bffb8;margin-top:2px;opacity:0.5;">VIEW →</div>
           </div>
-          <div style="font-size:7px;color:#0a1a0a;margin-top:5px;">${ue.length} shifts · Joined ${fmtD(u.createdAt)}</div>
+          <div style="font-size:7px;color:#5aaa7a;margin-top:5px;">${ue.length} shifts · Joined ${fmtD(u.createdAt)}</div>
         </div>`;}).join("")}
   `:""}
 
   ${atab==="reports"?`
-    <div style="font-size:8px;letter-spacing:3px;color:#1a3a1a;margin-bottom:11px;">ALL REPORTS — READ ONLY</div>
-    ${(DB.reports||[]).length===0?`<div style="text-align:center;color:#0a1a0a;font-size:11px;padding:34px 0;">No reports yet.</div>`
+    <div style="font-size:8px;letter-spacing:3px;color:#5aaa7a;margin-bottom:11px;">ALL REPORTS — READ ONLY</div>
+    ${(DB.reports||[]).length===0?`<div style="text-align:center;color:#5aaa7a;font-size:11px;padding:34px 0;">No reports yet.</div>`
       :[...(DB.reports||[])].sort((a,b)=>b.periodKey.localeCompare(a.periodKey)).map(r=>{
         const u=(DB.users||[]).find(x=>x.id===r.userId);
         return rARCard(r,u?.name,curr);}).join("")}
   `:""}
 
   ${atab==="settings"?`
-    <div style="font-size:8px;letter-spacing:3px;color:#1a3a1a;margin-bottom:13px;">SYSTEM SETTINGS</div>
+    <div style="font-size:8px;letter-spacing:3px;color:#5aaa7a;margin-bottom:13px;">SYSTEM SETTINGS</div>
 
     <!-- Admin hub password -->
-    <div style="background:rgba(107,255,184,.03);border:1px solid rgba(107,255,184,.08);border-radius:10px;padding:13px;margin-bottom:11px;">
-      <div style="font-size:8px;letter-spacing:3px;color:#1a3a1a;margin-bottom:9px;">ADMIN HUB PASSWORD</div>
+    <div style="background:rgba(107,255,184,.04);border:1px solid rgba(107,255,184,.25);border-radius:10px;padding:13px;margin-bottom:11px;">
+      <div style="font-size:8px;letter-spacing:3px;color:#5aaa7a;margin-bottom:9px;">ADMIN HUB PASSWORD</div>
       <div class="ff"><div class="lbl">NEW PASSWORD</div><input class="inp" id="inp-anp" type="password" placeholder="New password"/></div>
       <div class="ff"><div class="lbl">CONFIRM</div><input class="inp" id="inp-acp" type="password" placeholder="Confirm"/></div>
       <div id="apwmsg" style="font-size:10px;min-height:16px;margin-bottom:6px;"></div>
-      <button data-action="save-adm-pw" class="btn" style="background:rgba(107,255,184,.08);border:1px solid rgba(107,255,184,.2);color:#6bffb8;font-size:10px;padding:11px 0;">SAVE ADMIN PASSWORD</button>
+      <button data-action="save-adm-pw" class="btn" style="background:rgba(107,255,184,.12);border:1px solid rgba(107,255,184,.45);color:#6bffb8;font-size:10px;padding:11px 0;">SAVE ADMIN PASSWORD</button>
     </div>
 
     <!-- Currency -->
-    <div style="background:rgba(153,136,255,.03);border:1px solid rgba(153,136,255,.08);border-radius:10px;padding:13px;margin-bottom:11px;">
-      <div style="font-size:8px;letter-spacing:3px;color:#3a2a6a;margin-bottom:9px;">CURRENCY SYMBOL</div>
+    <div style="background:rgba(153,136,255,.05);border:1px solid rgba(153,136,255,.28);border-radius:10px;padding:13px;margin-bottom:11px;">
+      <div style="font-size:8px;letter-spacing:3px;color:#9080c0;margin-bottom:9px;">CURRENCY SYMBOL</div>
       <div class="ff"><div class="lbl">SYMBOL (£ $ € etc.)</div>
         <input class="inp" id="inp-curr" value="${DB.currency||"£"}" placeholder="£" style="font-size:20px;width:80px;"/>
       </div>
-      <button data-action="save-curr" class="btn" style="background:rgba(153,136,255,.08);border:1px solid rgba(153,136,255,.2);color:#9988ff;font-size:10px;padding:11px 0;">SAVE CURRENCY</button>
+      <button data-action="save-curr" class="btn" style="background:rgba(153,136,255,.14);border:1px solid rgba(153,136,255,.45);color:#b8aaff;font-size:10px;padding:11px 0;">SAVE CURRENCY</button>
     </div>
 
     <!-- Employee admin passwords — VISIBLE & EDITABLE -->
-    <div style="background:rgba(255,190,107,.03);border:1px solid rgba(255,190,107,.08);border-radius:10px;padding:13px;margin-bottom:11px;">
-      <div style="font-size:8px;letter-spacing:3px;color:#4a2a00;margin-bottom:5px;">EMPLOYEE ADMIN PASSWORDS</div>
-      <div style="font-size:8px;color:#3a2200;margin-bottom:10px;">The personal password each employee uses to unlock admin actions in their app.</div>
+    <div style="background:rgba(255,190,107,.04);border:1px solid rgba(255,190,107,.28);border-radius:10px;padding:13px;margin-bottom:11px;">
+      <div style="font-size:8px;letter-spacing:3px;color:#c08030;margin-bottom:5px;">EMPLOYEE ADMIN PASSWORDS</div>
+      <div style="font-size:8px;color:#a07030;margin-bottom:10px;">The personal password each employee uses to unlock admin actions in their app.</div>
       ${(DB.users||[]).length===0?`<div style="font-size:9px;color:#2a1a00;">No employees yet.</div>`
         :(DB.users||[]).map(u=>`
         <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:10px;margin-bottom:7px;">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
             <div>
               <div style="font-size:11px;color:#fff;font-weight:700;">${u.name}</div>
-              <div style="font-size:8px;color:#3a2200;">@${u.username}</div>
+              <div style="font-size:8px;color:#a07030;">@${u.username}</div>
             </div>
             <button data-action="toggle-upw-${u.id}" id="btn-upw-${u.id}" style="background:rgba(255,190,107,.08);border:1px solid rgba(255,190,107,.35);color:#ffbe6b;border-radius:5px;padding:3px 8px;font-size:8px;cursor:pointer;font-family:inherit;">SHOW</button>
           </div>
@@ -597,10 +597,10 @@ function rAApp(){
     </div>
 
     <!-- Data -->
-    <div style="background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.04);border-radius:10px;padding:13px;">
-      <div style="font-size:8px;letter-spacing:3px;color:#1a3a1a;margin-bottom:8px;">DATA OVERVIEW</div>
+    <div style="background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px;">
+      <div style="font-size:8px;letter-spacing:3px;color:#5aaa7a;margin-bottom:8px;">DATA OVERVIEW</div>
       ${[["Employees",(DB.users||[]).length],["Shifts",(DB.entries||[]).length],["Payments",(DB.payments||[]).length],["Reports",(DB.reports||[]).length]].map(([k,v])=>`
-        <div class="row" style="border-bottom:1px solid rgba(107,255,184,.04);padding:5px 0;"><span style="color:#1a3a1a;">${k}</span><span style="color:#6bffb844;">${v}</span></div>`).join("")}
+        <div class="row" style="border-bottom:1px solid rgba(107,255,184,.12);padding:5px 0;"><span style="color:#5aaa7a;">${k}</span><span style="color:#6bffb8;opacity:0.6;">${v}</span></div>`).join("")}
       <div style="margin-top:11px;">
         <button data-action="export-json" class="btn" style="background:rgba(66,133,244,.12);border:1px solid rgba(66,133,244,.38);color:#4285f4;font-size:9px;padding:10px 0;">📥 EXPORT DATA AS JSON</button>
       </div>
@@ -636,13 +636,13 @@ function rADetail(uid){
     <button data-action="back-users" style="background:rgba(107,255,184,.1);border:1px solid rgba(107,255,184,.4);color:#6bffb8;font-size:8px;letter-spacing:2px;cursor:pointer;margin-bottom:7px;font-family:inherit;border-radius:7px;padding:5px 12px;">← ALL EMPLOYEES</button>
     <div style="display:flex;justify-content:space-between;align-items:flex-start;">
       <div>
-        <div style="font-size:8px;letter-spacing:3px;color:#0a2a0a;margin-bottom:2px;">EMPLOYEE</div>
+        <div style="font-size:8px;letter-spacing:3px;color:#5aaa7a;margin-bottom:2px;">EMPLOYEE</div>
         <div style="font-size:20px;font-weight:700;color:#fff;">${u.name}</div>
-        <div style="font-size:8px;color:#6bffb844;margin-top:1px;">@${u.username}</div>
+        <div style="font-size:8px;color:#6bffb8;margin-top:1px;opacity:0.6;">@${u.username}</div>
       </div>
       <div style="text-align:right;">
-        <div style="font-size:7px;letter-spacing:2px;color:#1a3a1a;margin-bottom:2px;">HOURLY RATE</div>
-        <div style="font-size:18px;font-weight:700;color:${rate?"#6bffb8":"#0a1a0a"};">${rate?curr+rate.toFixed(2):"—"}</div>
+        <div style="font-size:7px;letter-spacing:2px;color:#5aaa7a;margin-bottom:2px;">HOURLY RATE</div>
+        <div style="font-size:18px;font-weight:700;color:${rate?"#6bffb8":"#5a9a7a"};">${rate?curr+rate.toFixed(2):"—"}</div>
         <button data-action="open-er-${uid}" style="font-size:7px;color:#6bffb8;background:rgba(107,255,184,.08);border:1px solid rgba(107,255,184,.3);border-radius:4px;padding:2px 7px;cursor:pointer;margin-top:3px;font-family:inherit;">EDIT RATE</button>
       </div>
     </div>
@@ -650,70 +650,70 @@ function rADetail(uid){
   </div>
   <div class="sbar adm" id="sbar-ad"></div>
   <div class="tabs adm">
-    ${["shifts","pay","reports"].map(k=>`<button class="tab${udTab===k?" on":""}" data-action="udt-${k}" style="color:${udTab===k?"#6bffb8":"#1a3a1a"};">${k.toUpperCase()}</button>`).join("")}
+    ${["shifts","pay","reports"].map(k=>`<button class="tab${udTab===k?" on":""}" data-action="udt-${k}" style="color:${udTab===k?"#6bffb8":"#6aaa7a"};">${k.toUpperCase()}</button>`).join("")}
   </div>
   <div class="body">
 
   ${udTab==="shifts"?`
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-      <div style="font-size:8px;letter-spacing:3px;color:#1a3a1a;">ALL SHIFTS (${ents.length})</div>
+      <div style="font-size:8px;letter-spacing:3px;color:#5aaa7a;">ALL SHIFTS (${ents.length})</div>
       <button data-action="open-as-${uid}" style="background:rgba(107,255,184,.1);border:1px solid rgba(107,255,184,.38);color:#6bffb8;border-radius:6px;padding:5px 9px;font-size:8px;cursor:pointer;font-family:inherit;">+ ADD SHIFT</button>
     </div>
-    ${ents.length===0?`<div style="text-align:center;color:#0a1a0a;font-size:11px;padding:26px 0;">No shifts recorded.</div>`
+    ${ents.length===0?`<div style="text-align:center;color:#5aaa7a;font-size:11px;padding:26px 0;">No shifts recorded.</div>`
       :ents.map(e=>`
       <div style="background:rgba(0,0,0,.18);border:1px solid ${e.manual?"rgba(107,255,184,.1)":"rgba(255,255,255,.04)"};border-radius:9px;padding:10px;margin-bottom:6px;">
         <div style="display:flex;justify-content:space-between;align-items:center;">
           <div>
             <div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;">
-              <span style="font-size:9px;color:${e.manual?"#6bffb8":"#1a3a1a"};">${e.date}</span>
+              <span style="font-size:9px;color:${e.manual?"#6bffb8":"#9090b8"};">${e.date}</span>
               ${e.manual?`<span style="font-size:6px;color:#6bffb8;background:rgba(107,255,184,.1);border-radius:3px;padding:1px 3px;">${e.addedByAdmin?"ADMIN":"MANUAL"}</span>`:""}
             </div>
-            <div style="font-size:12px;font-weight:700;color:#6bffb8;">${fmtDur(e.netMs)}<span style="font-size:8px;color:#1a3a1a;font-weight:400;margin-left:3px;">net</span></div>
-            <div style="font-size:8px;color:#1a3a1a;">${fmtT(e.clockIn)} → ${fmtT(e.clockOut)}</div>
+            <div style="font-size:12px;font-weight:700;color:#6bffb8;">${fmtDur(e.netMs)}<span style="font-size:8px;color:#6aaa7a;font-weight:400;margin-left:3px;">net</span></div>
+            <div style="font-size:8px;color:#7aaa8a;">${fmtT(e.clockIn)} → ${fmtT(e.clockOut)}</div>
           </div>
           <div style="display:flex;gap:5px;">
-            <button data-action="open-edit-ae-${e.id}" style="background:none;border:1px solid rgba(107,255,184,.12);color:#6bffb855;border-radius:4px;padding:3px 7px;font-size:7px;cursor:pointer;font-family:inherit;">EDIT</button>
-            <button data-action="adel-e-${e.id}" style="background:none;border:1px solid rgba(255,100,100,.08);color:#ff6b6b33;border-radius:4px;padding:3px 7px;font-size:7px;cursor:pointer;font-family:inherit;">DEL</button>
+            <button data-action="open-edit-ae-${e.id}" style="background:none;border:1px solid rgba(107,255,184,.4);color:#6bffb8;border-radius:4px;padding:3px 7px;font-size:7px;cursor:pointer;font-family:inherit;">EDIT</button>
+            <button data-action="adel-e-${e.id}" style="background:none;border:1px solid rgba(255,100,100,.35);color:#ff8080;border-radius:4px;padding:3px 7px;font-size:7px;cursor:pointer;font-family:inherit;">DEL</button>
           </div>
         </div>
       </div>`).join("")}
   `:""}
 
   ${udTab==="pay"?`
-    <div style="font-size:7px;letter-spacing:3px;color:#1a3a1a;margin-bottom:3px;">CURRENT PERIOD</div>
-    <div style="font-size:7px;color:#0a2a0a;margin-bottom:11px;">${ppLabel(pS)}</div>
+    <div style="font-size:7px;letter-spacing:3px;color:#5aaa7a;margin-bottom:3px;">CURRENT PERIOD</div>
+    <div style="font-size:7px;color:#5aaa7a;margin-bottom:11px;">${ppLabel(pS)}</div>
     <div style="display:flex;gap:8px;margin-bottom:11px;">
       <div style="flex:1;background:rgba(107,255,184,.04);border:1px solid rgba(107,255,184,.08);border-radius:9px;padding:10px;">
-        <div style="font-size:7px;letter-spacing:2px;color:#1a3a1a;margin-bottom:2px;">HOURS</div>
+        <div style="font-size:7px;letter-spacing:2px;color:#5aaa7a;margin-bottom:2px;">HOURS</div>
         <div style="font-size:20px;font-weight:700;color:#6bffb8;">${pH.toFixed(2)}</div>
-        <div style="font-size:7px;color:#0a2a0a;">${fmtDur(pMs)}</div>
+        <div style="font-size:7px;color:#5aaa7a;">${fmtDur(pMs)}</div>
       </div>
       <div style="flex:1;background:rgba(153,136,255,.04);border:1px solid rgba(153,136,255,.08);border-radius:9px;padding:10px;">
-        <div style="font-size:7px;letter-spacing:2px;color:#2a1a4a;margin-bottom:2px;">EXPECTED</div>
+        <div style="font-size:7px;letter-spacing:2px;color:#9080c0;margin-bottom:2px;">EXPECTED</div>
         <div style="font-size:20px;font-weight:700;color:#9988ff;">${curr}${(pH*rate).toFixed(2)}</div>
-        <div style="font-size:7px;color:#1a0a3a;">${pH.toFixed(2)}h × ${curr}${rate.toFixed(2)}</div>
+        <div style="font-size:7px;color:#8070b8;">${pH.toFixed(2)}h × ${curr}${rate.toFixed(2)}</div>
       </div>
     </div>
     ${rBal(pBal,pH*rate,pRcvd,curr)}
     <div style="display:flex;justify-content:space-between;align-items:center;margin:9px 0 6px;">
-      <div style="font-size:7px;letter-spacing:3px;color:#1a3a1a;">PAYMENTS</div>
+      <div style="font-size:7px;letter-spacing:3px;color:#5aaa7a;">PAYMENTS</div>
       <button data-action="open-rp-${uid}" style="background:rgba(107,255,184,.1);border:1px solid rgba(107,255,184,.35);color:#6bffb8;border-radius:6px;padding:4px 8px;font-size:8px;cursor:pointer;font-family:inherit;">+ RECORD</button>
     </div>
-    ${pPays.length===0?`<div style="font-size:10px;color:#0a1a0a;padding:7px 0;">No payments recorded.</div>`
+    ${pPays.length===0?`<div style="font-size:10px;color:#5aaa7a;padding:7px 0;">No payments recorded.</div>`
       :pPays.map(p=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(107,255,184,.03);">
-        <div><div style="font-size:12px;color:#6bffb8;font-weight:700;">${curr}${parseFloat(p.amount).toFixed(2)}</div><div style="font-size:8px;color:#1a3a1a;">${fmtD(p.date)}${p.note?` · ${p.note}`:""}</div></div>
+        <div><div style="font-size:12px;color:#6bffb8;font-weight:700;">${curr}${parseFloat(p.amount).toFixed(2)}</div><div style="font-size:8px;color:#7aaa8a;">${fmtD(p.date)}${p.note?` · ${p.note}`:""}</div></div>
         <button data-action="adel-pay-${p.id}" style="background:none;border:1px solid rgba(255,100,100,.08);color:#ff6b6b33;border-radius:4px;padding:2px 5px;font-size:7px;cursor:pointer;">DEL</button>
       </div>`).join("")}
     <div style="margin-top:13px;padding-top:10px;border-top:1px solid rgba(107,255,184,.04);">
       ${hasRpt
-        ?`<div style="font-size:8px;color:#1a3a1a;text-align:center;letter-spacing:2px;">✓ REPORT ALREADY GENERATED</div>`
-        :`<button data-action="open-gr-${uid}" class="btn" style="background:rgba(107,255,184,.07);border:1px solid rgba(107,255,184,.18);color:#6bffb8;font-size:9px;">📊 GENERATE PERIOD REPORT</button>`}
+        ?`<div style="font-size:8px;color:#5aaa7a;text-align:center;letter-spacing:2px;">✓ REPORT ALREADY GENERATED</div>`
+        :`<button data-action="open-gr-${uid}" class="btn" style="background:rgba(107,255,184,.12);border:1px solid rgba(107,255,184,.45);color:#6bffb8;font-size:9px;">📊 GENERATE PERIOD REPORT</button>`}
     </div>
   `:""}
 
   ${udTab==="reports"?`
-    <div style="font-size:8px;letter-spacing:3px;color:#1a3a1a;margin-bottom:11px;">REPORTS — READ ONLY</div>
-    ${rpts.length===0?`<div style="text-align:center;color:#0a1a0a;font-size:11px;padding:26px 0;">No reports.</div>`
+    <div style="font-size:8px;letter-spacing:3px;color:#5aaa7a;margin-bottom:11px;">REPORTS — READ ONLY</div>
+    ${rpts.length===0?`<div style="text-align:center;color:#5aaa7a;font-size:11px;padding:26px 0;">No reports.</div>`
       :rpts.map(r=>rARCard(r,null,curr)).join("")}
   `:""}
 
@@ -721,8 +721,8 @@ function rADetail(uid){
 
   <!-- Bottom action bar -->
   <div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:500px;background:rgba(2,6,4,.97);border-top:1px solid rgba(107,255,184,.05);padding:9px 14px;display:flex;gap:8px;z-index:50;">
-    <button data-action="open-rspw-${uid}" style="flex:1;padding:10px 0;background:rgba(255,190,107,.05);border:1px solid rgba(255,190,107,.12);color:#ffbe6b55;border-radius:7px;font-size:8px;letter-spacing:2px;cursor:pointer;font-family:inherit;">🔑 RESET PASSWORD</button>
-    <button data-action="confirm-du-${uid}" style="flex:1;padding:10px 0;background:rgba(255,107,107,.04);border:1px solid rgba(255,107,107,.1);color:#ff6b6b44;border-radius:7px;font-size:8px;letter-spacing:2px;cursor:pointer;font-family:inherit;">🗑 DELETE USER</button>
+    <button data-action="open-rspw-${uid}" style="flex:1;padding:10px 0;background:rgba(255,190,107,.1);border:1px solid rgba(255,190,107,.45);color:#ffbe6b;border-radius:7px;font-size:8px;letter-spacing:2px;cursor:pointer;font-family:inherit;">🔑 RESET PASSWORD</button>
+    <button data-action="confirm-du-${uid}" style="flex:1;padding:10px 0;background:rgba(255,107,107,.1);border:1px solid rgba(255,107,107,.45);color:#ff8080;border-radius:7px;font-size:8px;letter-spacing:2px;cursor:pointer;font-family:inherit;">🗑 DELETE USER</button>
   </div>
   <div class="pluto" style="margin-bottom:56px;">CREATED BY PLUTO</div>
   ${A.modal?rModal(A.modal):""}
@@ -732,9 +732,9 @@ function rADetail(uid){
 // ═══════════════════════════════════════════════════════════════════════
 // SHARED PIECES
 // ═══════════════════════════════════════════════════════════════════════
-const mst = (l,v,c) => `<div style="flex:1;background:rgba(0,0,0,.25);border-radius:8px;padding:8px 5px;border:1px solid ${c}18;text-align:center;"><div style="font-size:7px;letter-spacing:2px;color:#181828;margin-bottom:2px;">${l}</div><div style="font-size:12px;font-weight:700;color:${c};">${v}</div></div>`;
-const ms2  = (l,v,c) => `<div><div style="font-size:7px;color:#0a1a0a;letter-spacing:2px;">${l}</div><div style="font-size:13px;font-weight:700;color:${c};">${v}</div></div>`;
-const kv   = (k,v,vc="#555") => `<div class="row"><span style="color:#2a2a44;">${k}</span><span style="color:${vc};">${v}</span></div>`;
+const mst = (l,v,c) => `<div style="flex:1;background:rgba(0,0,0,.25);border-radius:8px;padding:8px 5px;border:1px solid ${c}44;text-align:center;"><div style="font-size:7px;letter-spacing:2px;color:#9090b8;margin-bottom:2px;">${l}</div><div style="font-size:12px;font-weight:700;color:${c};">${v}</div></div>`;
+const ms2  = (l,v,c) => `<div><div style="font-size:7px;color:#5aaa7a;letter-spacing:2px;">${l}</div><div style="font-size:13px;font-weight:700;color:${c};">${v}</div></div>`;
+const kv   = (k,v,vc="#9090b8") => `<div class="row"><span style="color:#9090b8;">${k}</span><span style="color:${vc};">${v}</span></div>`;
 
 function rBal(bal,exp,rcvd,curr){
   const bg=bal>0?"rgba(255,107,107,.07)":bal<0?"rgba(153,136,255,.07)":"rgba(107,255,184,.07)";
@@ -742,9 +742,9 @@ function rBal(bal,exp,rcvd,curr){
   const cl=bal>0?"#ff6b6b":bal<0?"#9988ff":"#6bffb8";
   const lb=bal>0?"OWED TO YOU":bal<0?"OVERPAID BY":"ALL PAID ✓";
   return`<div style="background:${bg};border:1px solid ${bd};border-radius:10px;padding:13px;margin-bottom:11px;">
-    <div style="font-size:7px;letter-spacing:3px;color:#3a3a3a;margin-bottom:4px;">${lb}</div>
+    <div style="font-size:7px;letter-spacing:3px;color:#a0a0c0;margin-bottom:4px;">${lb}</div>
     <div style="font-size:32px;font-weight:700;color:${cl};">${curr}${Math.abs(bal).toFixed(2)}</div>
-    <div style="display:flex;justify-content:space-between;margin-top:7px;font-size:9px;color:#2a2a2a;">
+    <div style="display:flex;justify-content:space-between;margin-top:7px;font-size:9px;color:#8888a8;">
       <span>Expected: ${curr}${(exp||0).toFixed(2)}</span><span>Received: ${curr}${(rcvd||0).toFixed(2)}</span>
     </div>
   </div>`;
@@ -755,24 +755,24 @@ function rECard(e,adminOpen){
     <div style="display:flex;justify-content:space-between;align-items:flex-start;">
       <div>
         <div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;">
-          <span style="font-size:9px;color:${e.manual?"#7c6bff":"#3a3a5a"};">${e.date}</span>
+          <span style="font-size:9px;color:${e.manual?"#9988ff":"#8888aa"};">${e.date}</span>
           ${e.manual?`<span style="font-size:6px;color:#7c6bff;background:rgba(124,107,255,.1);border-radius:3px;padding:1px 3px;">MANUAL</span>`:""}
         </div>
-        <div style="font-size:13px;font-weight:700;color:#6bffb8;">${fmtDur(e.netMs)}<span style="font-size:8px;color:#1a1a2a;font-weight:400;margin-left:3px;">net</span></div>
-        <div style="font-size:8px;color:#1a1a2a;">${fmtT(e.clockIn)} → ${fmtT(e.clockOut)}</div>
+        <div style="font-size:13px;font-weight:700;color:#6bffb8;">${fmtDur(e.netMs)}<span style="font-size:8px;color:#6060a0;font-weight:400;margin-left:3px;">net</span></div>
+        <div style="font-size:8px;color:#8080a8;">${fmtT(e.clockIn)} → ${fmtT(e.clockOut)}</div>
       </div>
       <div style="display:flex;gap:4px;">
-        <button data-action="tgl-e-${e.id}" style="background:none;border:1px solid rgba(255,255,255,.05);color:#2a2a44;border-radius:4px;padding:3px 6px;font-size:7px;cursor:pointer;">INFO</button>
+        <button data-action="tgl-e-${e.id}" style="background:none;border:1px solid rgba(160,160,220,.35);color:#a0a0cc;border-radius:4px;padding:3px 6px;font-size:7px;cursor:pointer;background:rgba(100,100,180,.1);">INFO</button>
         ${adminOpen?`
-        <button data-action="open-edit-ue-${e.id}" style="background:none;border:1px solid rgba(124,107,255,.12);color:#7c6bff55;border-radius:4px;padding:3px 6px;font-size:7px;cursor:pointer;">EDIT</button>
-        <button data-action="udel-e-${e.id}" style="background:none;border:1px solid rgba(255,100,100,.08);color:#ff6b6b55;border-radius:4px;padding:3px 6px;font-size:7px;cursor:pointer;">DEL</button>`
-        :`<button data-action="udel-e-${e.id}" style="background:none;border:1px solid rgba(255,100,100,.05);color:#ff6b6b1a;border-radius:4px;padding:3px 6px;font-size:7px;cursor:pointer;">🔒</button>`}
+        <button data-action="open-edit-ue-${e.id}" style="background:none;border:1px solid rgba(124,107,255,.5);color:#a090ff;border-radius:4px;padding:3px 6px;font-size:7px;cursor:pointer;background:rgba(124,107,255,.1);">EDIT</button>
+        <button data-action="udel-e-${e.id}" style="background:none;border:1px solid rgba(255,100,100,.4);color:#ff8888;border-radius:4px;padding:3px 6px;font-size:7px;cursor:pointer;background:rgba(255,100,100,.08);">DEL</button>`
+        :`<button data-action="udel-e-${e.id}" style="background:none;border:1px solid rgba(255,255,255,.1);color:#6060a0;border-radius:4px;padding:3px 6px;font-size:7px;cursor:pointer;">🔒</button>`}
       </div>
     </div>
-    <div id="ed-${e.id}" style="display:none;margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.04);font-size:9px;">
+    <div id="ed-${e.id}" style="display:none;margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.12);font-size:9px;">
       ${kv("Clock In",fmtTF(e.clockIn))}${kv("Clock Out",fmtTF(e.clockOut))}${kv("Gross Work",fmtDur(e.workMs))}${kv("Break",fmtDur(e.breakMs),"#ffbe6b")}
       ${(e.breaks||[]).map((b,i)=>kv("Break "+(i+1),fmtT(b.s||b.start)+" → "+fmtT(b.e||b.end),"#333")).join("")}
-      <div style="margin-top:4px;padding-top:4px;border-top:1px solid rgba(255,255,255,.03);">${kv("NET",fmtDur(e.netMs),"#6bffb8")}</div>
+      <div style="margin-top:4px;padding-top:4px;border-top:1px solid rgba(255,255,255,.1);">${kv("NET",fmtDur(e.netMs),"#6bffb8")}</div>
     </div>
   </div>`;
 }
@@ -780,33 +780,33 @@ function rECard(e,adminOpen){
 function rRCard(r,curr){
   const b=r.balance, cl=b>0?"#ff6b6b":b<0?"#9988ff":"#6bffb8";
   return`<div style="background:rgba(0,0,0,.18);border:1px solid rgba(124,107,255,.1);border-radius:10px;padding:12px;margin-bottom:8px;">
-    <div style="font-size:7px;letter-spacing:3px;color:#2a1a44;margin-bottom:2px;">PERIOD</div>
+    <div style="font-size:7px;letter-spacing:3px;color:#8070b8;margin-bottom:2px;">PERIOD</div>
     <div style="font-size:11px;color:#9988ff;font-weight:700;margin-bottom:5px;">${r.label}</div>
     <div style="display:flex;gap:10px;margin-bottom:8px;">
-      ${[["HOURS",(r.totalHours||0).toFixed(2),"#6bffb8"],["EXPECTED",curr+(r.expectedPay||0).toFixed(2),"#9988ff"],["RECEIVED",curr+(r.totalReceived||0).toFixed(2),"#ffbe6b"]].map(([l,v,c])=>`<div><div style="font-size:7px;color:#1e1e2e;letter-spacing:2px;">${l}</div><div style="font-size:14px;font-weight:700;color:${c};">${v}</div></div>`).join("")}
+      ${[["HOURS",(r.totalHours||0).toFixed(2),"#6bffb8"],["EXPECTED",curr+(r.expectedPay||0).toFixed(2),"#9988ff"],["RECEIVED",curr+(r.totalReceived||0).toFixed(2),"#ffbe6b"]].map(([l,v,c])=>`<div><div style="font-size:7px;color:#7070a0;letter-spacing:2px;">${l}</div><div style="font-size:14px;font-weight:700;color:${c};">${v}</div></div>`).join("")}
     </div>
     <div style="padding:6px 9px;background:${b>0?"rgba(255,107,107,.06)":b<0?"rgba(153,136,255,.06)":"rgba(107,255,184,.06)"};border:1px solid ${b>0?"rgba(255,107,107,.14)":b<0?"rgba(153,136,255,.14)":"rgba(107,255,184,.14)"};border-radius:7px;display:flex;justify-content:space-between;">
-      <span style="font-size:7px;letter-spacing:2px;color:#3a3a3a;">${b>0?"STILL OWED":b<0?"OVERPAID":"FULLY PAID ✓"}</span>
+      <span style="font-size:7px;letter-spacing:2px;color:#a0a0c0;">${b>0?"STILL OWED":b<0?"OVERPAID":"FULLY PAID ✓"}</span>
       <span style="font-size:15px;font-weight:700;color:${cl};">${curr}${Math.abs(b).toFixed(2)}</span>
     </div>
-    <div style="font-size:7px;color:#141420;margin-top:5px;text-align:right;">Generated ${fmtD(r.generated)}</div>
+    <div style="font-size:7px;color:#6060a0;margin-top:5px;text-align:right;">Generated ${fmtD(r.generated)}</div>
   </div>`;
 }
 
 function rARCard(r,name,curr){
   const b=r.balance, cl=b>0?"#ff6b6b":b<0?"#9988ff":"#6bffb8";
   return`<div style="background:rgba(0,0,0,.18);border:1px solid rgba(107,255,184,.08);border-radius:10px;padding:12px;margin-bottom:8px;">
-    ${name?`<div style="font-size:8px;color:#6bffb844;margin-bottom:4px;">👤 ${name}</div>`:""}
-    <div style="font-size:7px;letter-spacing:3px;color:#1a3a1a;margin-bottom:2px;">PERIOD</div>
+    ${name?`<div style="font-size:8px;color:#6bffb8;margin-bottom:4px;opacity:0.7;">👤 ${name}</div>`:""}
+    <div style="font-size:7px;letter-spacing:3px;color:#5aaa7a;margin-bottom:2px;">PERIOD</div>
     <div style="font-size:11px;color:#6bffb8;font-weight:700;margin-bottom:5px;">${r.label}</div>
     <div style="display:flex;gap:10px;margin-bottom:8px;">
-      ${[["HOURS",(r.totalHours||0).toFixed(2),"#6bffb8"],["EXPECTED",curr+(r.expectedPay||0).toFixed(2),"#9988ff"],["RECEIVED",curr+(r.totalReceived||0).toFixed(2),"#ffbe6b"]].map(([l,v,c])=>`<div><div style="font-size:7px;color:#0a2a0a;letter-spacing:2px;">${l}</div><div style="font-size:14px;font-weight:700;color:${c};">${v}</div></div>`).join("")}
+      ${[["HOURS",(r.totalHours||0).toFixed(2),"#6bffb8"],["EXPECTED",curr+(r.expectedPay||0).toFixed(2),"#9988ff"],["RECEIVED",curr+(r.totalReceived||0).toFixed(2),"#ffbe6b"]].map(([l,v,c])=>`<div><div style="font-size:7px;color:#5aaa7a;letter-spacing:2px;">${l}</div><div style="font-size:14px;font-weight:700;color:${c};">${v}</div></div>`).join("")}
     </div>
     <div style="padding:6px 9px;background:${b>0?"rgba(255,107,107,.05)":b<0?"rgba(153,136,255,.05)":"rgba(107,255,184,.05)"};border:1px solid ${b>0?"rgba(255,107,107,.12)":b<0?"rgba(153,136,255,.12)":"rgba(107,255,184,.12)"};border-radius:6px;display:flex;justify-content:space-between;">
-      <span style="font-size:7px;letter-spacing:2px;color:#2a2a2a;">${b>0?"OWED":b<0?"OVERPAID":"PAID ✓"}</span>
+      <span style="font-size:7px;letter-spacing:2px;color:#8888a8;">${b>0?"OWED":b<0?"OVERPAID":"PAID ✓"}</span>
       <span style="font-size:14px;font-weight:700;color:${cl};">${curr}${Math.abs(b).toFixed(2)}</span>
     </div>
-    <div style="font-size:7px;color:#0a140a;margin-top:5px;text-align:right;">${r.generatedByAdmin?"Admin · ":""}${fmtD(r.generated)}</div>
+    <div style="font-size:7px;color:#5aaa7a;margin-top:5px;text-align:right;">${r.generatedByAdmin?"Admin · ":""}${fmtD(r.generated)}</div>
   </div>`;
 }
 
@@ -818,25 +818,25 @@ function rMForm(forUid, isAdmin){
   return`<div style="background:rgba(${isAdmin?"107,255,184":"124,107,255"},.05);border:1px solid rgba(${isAdmin?"107,255,184":"124,107,255"},.18);border-radius:10px;padding:13px;margin-bottom:13px;" class="fade">
   <div style="display:flex;justify-content:space-between;margin-bottom:9px;">
     <div style="font-size:8px;letter-spacing:3px;color:${ac};">${editing?"✏ EDIT SHIFT":"➕ ADD PAST ENTRY"}</div>
-    <button data-action="cancel-mform" style="background:none;border:none;color:#444;cursor:pointer;font-size:14px;">✕</button>
+    <button data-action="cancel-mform" style="background:none;border:none;color:#9090b0;cursor:pointer;font-size:14px;">✕</button>
   </div>
   <div class="ff"><div class="lbl">DATE</div><input class="inp" id="m-date" type="date" value="${f.mDate||""}" max="${dateVal(new Date().toISOString())}"/></div>
   <div style="display:flex;gap:7px;">
     <div class="ff" style="flex:1;"><div class="lbl">CLOCK IN</div><input class="inp" id="m-in" type="time" value="${f.mIn||""}"/></div>
     <div class="ff" style="flex:1;"><div class="lbl">CLOCK OUT</div><input class="inp" id="m-out" type="time" value="${f.mOut||""}"/></div>
   </div>
-  <div style="font-size:7px;letter-spacing:3px;color:#1e1e2e;margin:7px 0 5px;">BREAKS</div>
+  <div style="font-size:7px;letter-spacing:3px;color:#8080a8;margin:7px 0 5px;">BREAKS</div>
   ${(f.mBrks||[{s:"",e:""}]).map((b,i)=>`<div style="display:flex;gap:5px;align-items:center;margin-bottom:5px;">
     <input class="inp" data-bs="${i}" type="time" value="${b.s||""}" style="flex:1;"/>
-    <span style="color:#1e1e2e;font-size:10px;">→</span>
+    <span style="color:#7070a0;font-size:10px;">→</span>
     <input class="inp" data-be="${i}" type="time" value="${b.e||""}" style="flex:1;"/>
-    ${(f.mBrks||[]).length>1?`<button data-action="rm-brk-${i}" style="background:none;border:none;color:#ff6b6b33;cursor:pointer;font-size:14px;">✕</button>`:""}
+    ${(f.mBrks||[]).length>1?`<button data-action="rm-brk-${i}" style="background:none;border:none;color:#ff8888;cursor:pointer;font-size:14px;">✕</button>`:""}
   </div>`).join("")}
-  <button data-action="add-brk" style="width:100%;padding:5px 0;background:none;border:1px dashed rgba(255,255,255,.06);color:#2a2a2a;border-radius:5px;font-size:8px;letter-spacing:2px;cursor:pointer;margin-bottom:9px;font-family:inherit;">+ ADD BREAK</button>
+  <button data-action="add-brk" style="width:100%;padding:5px 0;background:none;border:1px dashed rgba(160,160,200,.2);color:#8080a8;border-radius:5px;font-size:8px;letter-spacing:2px;cursor:pointer;margin-bottom:9px;font-family:inherit;">+ ADD BREAK</button>
   ${f.mErr?`<div style="color:#ff6b6b;font-size:9px;margin-bottom:7px;">⚠ ${f.mErr}</div>`:""}
   <div style="display:flex;gap:7px;">
     <button data-action="save-mentry" class="btn" style="background:rgba(107,255,184,.08);border:1px solid rgba(107,255,184,.2);color:#6bffb8;font-size:9px;padding:10px 0;">${editing?"SAVE CHANGES":"SAVE ENTRY"}</button>
-    <button data-action="cancel-mform" class="btn" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);color:#2a2a2a;font-size:9px;padding:10px 0;">CANCEL</button>
+    <button data-action="cancel-mform" class="btn" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.18);color:#8888aa;font-size:9px;padding:10px 0;">CANCEL</button>
   </div>
 </div>`;
 }
@@ -844,7 +844,7 @@ function rMForm(forUid, isAdmin){
 // ── Payment form ──────────────────────────────────────────────────────
 function rPForm(){
   const f=A.form;
-  return`<div style="background:rgba(107,255,184,.04);border:1px solid rgba(107,255,184,.13);border-radius:9px;padding:11px;margin-bottom:10px;" class="fade">
+  return`<div style="background:rgba(107,255,184,.06);border:1px solid rgba(107,255,184,.3);border-radius:9px;padding:11px;margin-bottom:10px;" class="fade">
   <div style="font-size:8px;letter-spacing:3px;color:#6bffb8;margin-bottom:8px;">💰 RECORD PAYMENT</div>
   <div style="display:flex;gap:7px;">
     <div class="ff" style="flex:1;"><div class="lbl">AMOUNT</div><input class="inp" id="pay-amt" type="number" step="0.01" value="${f.payAmt||""}" placeholder="0.00" style="font-size:16px;"/></div>
@@ -853,7 +853,7 @@ function rPForm(){
   <div class="ff"><div class="lbl">NOTE (optional)</div><input class="inp" id="pay-note" value="${f.payNote||""}" placeholder="e.g. Bank transfer"/></div>
   <div style="display:flex;gap:7px;">
     <button data-action="save-pay" class="btn" style="background:rgba(107,255,184,.08);border:1px solid rgba(107,255,184,.2);color:#6bffb8;font-size:9px;padding:10px 0;">SAVE</button>
-    <button data-action="cancel-pform" class="btn" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);color:#2a2a2a;font-size:9px;padding:10px 0;">CANCEL</button>
+    <button data-action="cancel-pform" class="btn" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.18);color:#8888aa;font-size:9px;padding:10px 0;">CANCEL</button>
   </div>
 </div>`;
 }
@@ -869,22 +869,22 @@ function rModal(m){
 
   if(m.type==="confirm")return wrap(`
     <div style="font-size:8px;letter-spacing:4px;color:#ff6b6b;margin-bottom:8px;">⚠ CONFIRM</div>
-    <div style="font-size:12px;color:#555;margin-bottom:18px;">${m.message}</div>
+    <div style="font-size:12px;color:#c0c0d8;margin-bottom:18px;">${m.message}</div>
     <div style="display:flex;gap:7px;">
       <button data-action="do-confirm" class="btn" style="background:rgba(255,107,107,.1);border:1px solid rgba(255,107,107,.25);color:#ff6b6b;font-size:10px;padding:11px 0;">CONFIRM</button>
-      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);color:#333;font-size:10px;padding:11px 0;">CANCEL</button>
+      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.2);color:#9090b0;font-size:10px;padding:11px 0;">CANCEL</button>
     </div>`);
 
   if(m.type==="user-apw")return wrap(`
     <div style="font-size:8px;letter-spacing:4px;color:#7c6bff;margin-bottom:4px;">🔒 ADMIN ACCESS</div>
-    <div style="font-size:11px;color:#444;margin-bottom:14px;">${m.label||""}</div>
+    <div style="font-size:11px;color:#b0b0d0;margin-bottom:14px;">${m.label||""}</div>
     <div class="ff"><div class="lbl">YOUR ADMIN PASSWORD</div>
       <input class="inp" id="mod-pw" type="password" placeholder="Admin password" autofocus/>
     </div>
     <div id="mod-err" style="color:#ff6b6b;font-size:9px;min-height:14px;margin-bottom:6px;"></div>
     <div style="display:flex;gap:7px;">
       <button data-action="confirm-uapw" class="btn" style="background:rgba(124,107,255,.12);border:1px solid rgba(124,107,255,.3);color:#9988ff;font-size:10px;padding:11px 0;">UNLOCK</button>
-      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);color:#333;font-size:10px;padding:11px 0;">CANCEL</button>
+      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.2);color:#9090b0;font-size:10px;padding:11px 0;">CANCEL</button>
     </div>`);
 
   if(m.type==="chg-apw")return wrap(`
@@ -894,7 +894,7 @@ function rModal(m){
     <div id="pw-msg" style="font-size:10px;min-height:14px;margin-bottom:6px;"></div>
     <div style="display:flex;gap:7px;">
       <button data-action="save-chg-apw" class="btn" style="background:rgba(107,255,184,.08);border:1px solid rgba(107,255,184,.2);color:#6bffb8;font-size:10px;padding:11px 0;">SAVE</button>
-      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);color:#333;font-size:10px;padding:11px 0;">CANCEL</button>
+      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.2);color:#9090b0;font-size:10px;padding:11px 0;">CANCEL</button>
     </div>`);
 
   if(m.type==="create-user")return wrap(`
@@ -902,44 +902,44 @@ function rModal(m){
     <div class="ff"><div class="lbl">FULL NAME</div><input class="inp" id="nu-name" type="text" placeholder="Jane Smith"/></div>
     <div class="ff"><div class="lbl">USERNAME</div><input class="inp" id="nu-user" type="text" placeholder="janesmith" autocapitalize="none"/></div>
     <div class="ff"><div class="lbl">LOGIN PASSWORD</div><input class="inp" id="nu-pw" type="password" placeholder="Password to log in"/></div>
-    <div class="ff"><div class="lbl">ADMIN PASSWORD <span style="color:#ffbe6b55;">(for making changes in their app)</span></div>
+    <div class="ff"><div class="lbl">ADMIN PASSWORD <span style="color:#ffbe6b99;">(for making changes in their app)</span></div>
       <input class="inp" id="nu-apw" type="text" placeholder="e.g. admin123" value="admin123"/>
     </div>
     <div class="ff"><div class="lbl">HOURLY RATE</div><input class="inp" id="nu-rate" type="number" step="0.01" placeholder="e.g. 12.50" style="font-size:18px;"/></div>
     <div id="cu-err" style="color:#ff6b6b;font-size:9px;min-height:14px;margin-bottom:6px;"></div>
     <div style="display:flex;gap:7px;">
       <button data-action="save-cu" class="btn" style="background:rgba(107,255,184,.1);border:1px solid rgba(107,255,184,.24);color:#6bffb8;font-size:10px;padding:11px 0;">CREATE</button>
-      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);color:#333;font-size:10px;padding:11px 0;">CANCEL</button>
+      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.2);color:#9090b0;font-size:10px;padding:11px 0;">CANCEL</button>
     </div>`);
 
   if(m.type==="edit-rate")return wrap(`
     <div style="font-size:8px;letter-spacing:4px;color:#6bffb8;margin-bottom:4px;">✏ EDIT HOURLY RATE</div>
-    <div style="font-size:11px;color:#2a4a2a;margin-bottom:12px;">${(DB.users||[]).find(u=>u.id===m.uid)?.name||""}</div>
+    <div style="font-size:11px;color:#5aaa7a;margin-bottom:12px;">${(DB.users||[]).find(u=>u.id===m.uid)?.name||""}</div>
     <div class="ff"><div class="lbl">RATE (per hour)</div><input class="inp" id="er-val" type="number" step="0.01" value="${m.cur||""}" placeholder="0.00" style="font-size:20px;"/></div>
     <div style="display:flex;gap:7px;">
       <button data-action="save-er" class="btn" style="background:rgba(107,255,184,.08);border:1px solid rgba(107,255,184,.2);color:#6bffb8;font-size:10px;padding:11px 0;">SAVE</button>
-      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);color:#333;font-size:10px;padding:11px 0;">CANCEL</button>
+      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.2);color:#9090b0;font-size:10px;padding:11px 0;">CANCEL</button>
     </div>`);
 
   if(m.type==="reset-pw")return wrap(`
     <div style="font-size:8px;letter-spacing:4px;color:#ffbe6b;margin-bottom:4px;">🔑 RESET LOGIN PASSWORD</div>
-    <div style="font-size:11px;color:#444;margin-bottom:12px;">${(DB.users||[]).find(u=>u.id===m.uid)?.name||""}</div>
+    <div style="font-size:11px;color:#b0b0d0;margin-bottom:12px;">${(DB.users||[]).find(u=>u.id===m.uid)?.name||""}</div>
     <div class="ff"><div class="lbl">NEW PASSWORD</div><input class="inp" id="rp-pw" type="password"/></div>
     <div class="ff"><div class="lbl">CONFIRM</div><input class="inp" id="rp-cf" type="password"/></div>
     <div id="rp-msg" style="font-size:10px;min-height:14px;margin-bottom:6px;"></div>
     <div style="display:flex;gap:7px;">
       <button data-action="save-rp" class="btn" style="background:rgba(255,190,107,.08);border:1px solid rgba(255,190,107,.2);color:#ffbe6b;font-size:10px;padding:11px 0;">RESET</button>
-      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);color:#333;font-size:10px;padding:11px 0;">CANCEL</button>
+      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.2);color:#9090b0;font-size:10px;padding:11px 0;">CANCEL</button>
     </div>`);
 
   if(m.type==="add-shift")return wrap(`
     <div style="font-size:8px;letter-spacing:4px;color:#6bffb8;margin-bottom:4px;">${f.editEid?"✏ EDIT SHIFT":"➕ ADD SHIFT"}</div>
-    <div style="font-size:11px;color:#1a3a1a;margin-bottom:10px;">${(DB.users||[]).find(u=>u.id===m.uid)?.name||""}</div>
+    <div style="font-size:11px;color:#5aaa7a;margin-bottom:10px;">${(DB.users||[]).find(u=>u.id===m.uid)?.name||""}</div>
     ${rMForm(m.uid,true)}`);
 
   if(m.type==="record-pay")return wrap(`
     <div style="font-size:8px;letter-spacing:4px;color:#6bffb8;margin-bottom:4px;">💰 RECORD PAYMENT</div>
-    <div style="font-size:11px;color:#1a3a1a;margin-bottom:10px;">${(DB.users||[]).find(u=>u.id===m.uid)?.name||""}</div>
+    <div style="font-size:11px;color:#5aaa7a;margin-bottom:10px;">${(DB.users||[]).find(u=>u.id===m.uid)?.name||""}</div>
     <div style="display:flex;gap:7px;">
       <div class="ff" style="flex:1;"><div class="lbl">AMOUNT</div><input class="inp" id="pay-amt" type="number" step="0.01" value="${f.payAmt||""}" placeholder="0.00" style="font-size:16px;"/></div>
       <div class="ff" style="flex:1;"><div class="lbl">DATE</div><input class="inp" id="pay-date" type="date" value="${f.payDate||""}" max="${dateVal(new Date().toISOString())}"/></div>
@@ -947,16 +947,16 @@ function rModal(m){
     <div class="ff"><div class="lbl">NOTE (optional)</div><input class="inp" id="pay-note" value="${f.payNote||""}" placeholder="e.g. Bank transfer"/></div>
     <div style="display:flex;gap:7px;">
       <button data-action="save-pay-admin" class="btn" style="background:rgba(107,255,184,.08);border:1px solid rgba(107,255,184,.2);color:#6bffb8;font-size:10px;padding:11px 0;">SAVE</button>
-      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);color:#333;font-size:10px;padding:11px 0;">CANCEL</button>
+      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.2);color:#9090b0;font-size:10px;padding:11px 0;">CANCEL</button>
     </div>`);
 
   if(m.type==="gen-report")return wrap(`
     <div style="font-size:8px;letter-spacing:4px;color:#6bffb8;margin-bottom:8px;">📊 GENERATE REPORT</div>
-    <div style="font-size:11px;color:#444;margin-bottom:5px;">${(DB.users||[]).find(u=>u.id===m.uid)?.name||""}</div>
-    <div style="font-size:10px;color:#1a3a1a;margin-bottom:16px;">${ppLabel(getPP().s)}</div>
+    <div style="font-size:11px;color:#c0c0d8;margin-bottom:5px;">${(DB.users||[]).find(u=>u.id===m.uid)?.name||""}</div>
+    <div style="font-size:10px;color:#5aaa7a;margin-bottom:16px;">${ppLabel(getPP().s)}</div>
     <div style="display:flex;gap:7px;">
       <button data-action="do-gen-rpt" class="btn" style="background:rgba(107,255,184,.08);border:1px solid rgba(107,255,184,.2);color:#6bffb8;font-size:10px;padding:11px 0;">GENERATE</button>
-      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);color:#333;font-size:10px;padding:11px 0;">CANCEL</button>
+      <button data-action="close-modal" class="btn" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.2);color:#9090b0;font-size:10px;padding:11px 0;">CANCEL</button>
     </div>`);
 
   return"";
