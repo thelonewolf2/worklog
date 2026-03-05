@@ -88,15 +88,16 @@ const saveCache = () => LC.set("db",DB);
 // ═══════════════════════════════════════════════════════════════════════
 // GOOGLE DRIVE SYNC
 // ═══════════════════════════════════════════════════════════════════════
-const DRIVE_FILE_ID = "1MWWjDMFAaflnBYs6q2LGlZE3NcgROsh1";
-let gToken=null, gUser=null, gFileId=LC.get("fileId","") || DRIVE_FILE_ID, syncSt="idle", syncTmr=null;
+// The xlsx file is a manual reference only — app manages its own JSON file on Drive
+const XLSX_FILE_ID = "1MWWjDMFAaflnBYs6q2LGlZE3NcgROsh1"; // kept for reference only
+let gToken=null, gUser=null, gFileId=LC.get("wl_jsonFileId",""), syncSt="idle", syncTmr=null;
 let gTokenClient=null;
 
 function setSt(s){syncSt=s; document.querySelectorAll(".sbar").forEach(el=>renderSbar(el));}
 
 function renderSbar(el){
   const colors={syncing:"#ffbe6b",saved:"#6bffb8",error:"#ff6b6b",offline:"#888",idle:"#2a2a4a"};
-  const labels={syncing:"SYNCING…",saved:"SAVED",error:"SYNC ERROR",offline:"OFFLINE",idle:"LOCAL"};
+  const labels={syncing:"SYNCING…",saved:"SAVED ✓",error:"SYNC ERROR",offline:"OFFLINE",idle:"LOCAL"};
   const s=syncSt;
   el.innerHTML=`
     <span style="width:5px;height:5px;border-radius:50%;background:${colors[s]};display:inline-block;${s==="syncing"?"animation:pulse 1s infinite":""}"></span>
@@ -105,22 +106,53 @@ function renderSbar(el){
     <button data-action="do-sync" style="margin-left:${gUser?"4px":"auto"};background:none;border:1px solid rgba(255,255,255,.06);color:#2a2a4a;border-radius:4px;padding:2px 7px;font-size:7px;cursor:pointer;letter-spacing:1px;">↺ SYNC</button>`;
 }
 
+// Search Drive (root, not appDataFolder) for worklog-data.json
+async function driveFindJson(){
+  try{
+    const r=await fetch(
+      "https://www.googleapis.com/drive/v3/files?q=name%3D'worklog-data.json'+and+trashed%3Dfalse&fields=files(id,name)&spaces=drive",
+      {headers:{Authorization:"Bearer "+gToken}}
+    );
+    if(!r.ok)return null;
+    const d=await r.json();
+    return d.files?.[0]?.id||null;
+  }catch{return null;}
+}
+
 async function driveRead(){
   if(!gToken){loadCache();setSt("idle");render();return;}
   setSt("syncing");
   try{
-    let fid=gFileId;
+    // Find the JSON file in Drive (create later if missing)
+    let fid=gFileId||(await driveFindJson());
     if(!fid){
-      const r=await fetch("https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&q=name%3D'worklog-data.json'&fields=files(id)",{headers:{Authorization:"Bearer "+gToken}});
-      if(r.ok){const d=await r.json(); fid=d.files?.[0]?.id||null;}
+      // No JSON file yet — start fresh, will be created on first write
+      setSt("idle"); saveCache(); render(); return;
     }
-    if(!fid){setSt("idle");render();return;}
-    gFileId=fid; LC.set("fileId",fid);
-    const r2=await fetch(`https://www.googleapis.com/drive/v3/files/${fid}?alt=media`,{headers:{Authorization:"Bearer "+gToken}});
-    if(!r2.ok){setSt("error");render();return;}
-    const data=JSON.parse(await r2.text());
-    DB={...DB,...data}; saveCache(); setSt("saved"); render();
-  }catch{setSt("offline");render();}
+    gFileId=fid; LC.set("wl_jsonFileId",fid);
+    const r=await fetch(
+      `https://www.googleapis.com/drive/v3/files/${fid}?alt=media`,
+      {headers:{Authorization:"Bearer "+gToken}}
+    );
+    if(!r.ok){
+      if(r.status===404){
+        // File deleted from Drive — reset and start fresh
+        gFileId=""; LC.set("wl_jsonFileId","");
+        setSt("idle"); render(); return;
+      }
+      setSt("error"); render(); return;
+    }
+    const text=await r.text();
+    try{
+      const data=JSON.parse(text);
+      DB={...DB,...data}; saveCache(); setSt("saved"); render();
+    }catch{
+      setSt("error"); render();
+    }
+  }catch(e){
+    console.error("driveRead error:",e);
+    setSt("offline"); render();
+  }
 }
 
 async function driveWrite(){
@@ -129,20 +161,32 @@ async function driveWrite(){
   if(!gToken){setSt("idle");return;}
   const body=JSON.stringify(DB);
   try{
-    let fid=gFileId;
+    let fid=gFileId||(await driveFindJson());
     if(fid){
-      const r=await fetch(`https://www.googleapis.com/upload/drive/v3/files/${fid}?uploadType=media`,{method:"PATCH",headers:{Authorization:"Bearer "+gToken,"Content-Type":"application/json"},body});
+      // Update existing file
+      gFileId=fid; LC.set("wl_jsonFileId",fid);
+      const r=await fetch(
+        `https://www.googleapis.com/upload/drive/v3/files/${fid}?uploadType=media`,
+        {method:"PATCH",headers:{Authorization:"Bearer "+gToken,"Content-Type":"application/json"},body}
+      );
       setSt(r.ok?"saved":"error");
     }else{
-      const meta=JSON.stringify({name:"worklog-data.json",parents:["appDataFolder"]});
+      // Create new worklog-data.json in Drive root
+      const meta=JSON.stringify({name:"worklog-data.json"});
       const fd=new FormData();
       fd.append("metadata",new Blob([meta],{type:"application/json"}));
       fd.append("file",new Blob([body],{type:"application/json"}));
-      const r=await fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id",{method:"POST",headers:{Authorization:"Bearer "+gToken},body:fd});
-      if(r.ok){const d=await r.json();gFileId=d.id;LC.set("fileId",d.id);}
-      setSt(r.ok?"saved":"error");
+      const r=await fetch(
+        "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id",
+        {method:"POST",headers:{Authorization:"Bearer "+gToken},body:fd}
+      );
+      if(r.ok){const d=await r.json();gFileId=d.id;LC.set("wl_jsonFileId",d.id);setSt("saved");}
+      else setSt("error");
     }
-  }catch{setSt("offline");}
+  }catch(e){
+    console.error("driveWrite error:",e);
+    setSt("offline");
+  }
 }
 
 const scheduleWrite = () => { clearTimeout(syncTmr); setSt("syncing"); syncTmr=setTimeout(driveWrite,1100); };
@@ -969,7 +1013,7 @@ function do_act(action,ev){
   if(action==="gsignout"){if(gToken&&window.google)google.accounts.oauth2.revoke(gToken,()=>{});gToken=null;gUser=null;render();return;}
   if(action==="save-fid"){
     const id=(gv("inp-fid")||"").trim();
-    LC.set("fileId",id); gFileId=id;
+    LC.set("wl_jsonFileId",id); gFileId=id;
     if(gToken&&id){driveRead();}else{alert("File ID saved. Sign in with Google to enable sync.");}
     return;
   }
@@ -1272,9 +1316,6 @@ function do_act(action,ev){
 // BOOT
 // ═══════════════════════════════════════════════════════════════════════
 loadCache();
-// Always use the hardcoded Drive file — overrides any previously saved ID
-gFileId = DRIVE_FILE_ID;
-LC.set("fileId", DRIVE_FILE_ID);
 
 window.addEventListener("load",()=>{
   const tryInit=()=>{ if(window.google)initGoogle(); else setTimeout(tryInit,200); };
